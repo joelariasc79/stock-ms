@@ -1,0 +1,9 @@
+/home/ubuntu/stock-ms/src/main/java/com/stock/ms/controller/StockController.java
+/home/ubuntu/stock-ms/src/main/java/com/stock/ms/StockMsApplication.java
+/home/ubuntu/stock-ms/src/main/java/com/stock/ms/dto/Stock.java
+/home/ubuntu/stock-ms/src/main/java/com/stock/ms/dto/CustomerOrder.java
+/home/ubuntu/stock-ms/src/main/java/com/stock/ms/entity/StockRepository.java
+/home/ubuntu/stock-ms/src/main/java/com/stock/ms/service/ReversesStock.java
+/home/ubuntu/stock-ms/src/main/java/com/stock/ms/entity/WareHouse.java
+/home/ubuntu/stock-ms/src/main/java/com/stock/ms/dto/DeliveryEvent.java
+/home/ubuntu/stock-ms/src/main/java/com/stock/ms/dto/PaymentEvent.java
