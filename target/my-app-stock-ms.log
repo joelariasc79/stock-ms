@@ -1,0 +1,406 @@
+2025-04-28T05:58:28.260Z  INFO 3327 --- [main] com.stock.ms.StockMsApplication          : Starting StockMsApplication v0.0.1-SNAPSHOT using Java 17.0.14 with PID 3327 (/home/ubuntu/stock-ms/target/stock-ms-0.0.1-SNAPSHOT.jar started by ubuntu in /home/ubuntu/stock-ms/target)
+2025-04-28T05:58:28.267Z  INFO 3327 --- [main] com.stock.ms.StockMsApplication          : No active profile set, falling back to 1 default profile: "default"
+2025-04-28T05:58:29.368Z  INFO 3327 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-04-28T05:58:29.463Z  INFO 3327 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 75 ms. Found 1 JPA repository interfaces.
+2025-04-28T05:58:30.306Z  INFO 3327 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2025-04-28T05:58:30.318Z  INFO 3327 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-28T05:58:30.318Z  INFO 3327 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.10]
+2025-04-28T05:58:30.414Z  INFO 3327 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-28T05:58:30.415Z  INFO 3327 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2026 ms
+2025-04-28T05:58:30.468Z  INFO 3327 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-28T05:58:30.786Z  INFO 3327 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:stockdb user=SA
+2025-04-28T05:58:30.788Z  INFO 3327 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-28T05:58:30.801Z  INFO 3327 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:stockdb'
+2025-04-28T05:58:30.992Z  INFO 3327 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-04-28T05:58:31.048Z  INFO 3327 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.5.Final
+2025-04-28T05:58:31.051Z  INFO 3327 --- [main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2025-04-28T05:58:31.213Z  INFO 3327 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2025-04-28T05:58:31.384Z  INFO 3327 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-04-28T05:58:31.685Z  INFO 3327 --- [main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2025-04-28T05:58:32.316Z  INFO 3327 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-04-28T05:58:32.363Z  INFO 3327 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28T05:58:32.850Z  WARN 3327 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-04-28T05:58:33.444Z  INFO 3327 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2025-04-28T05:58:33.497Z  INFO 3327 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [172.31.19.68:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-stock-group-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = stock-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-04-28T05:58:33.739Z  INFO 3327 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
+2025-04-28T05:58:33.739Z  INFO 3327 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
+2025-04-28T05:58:33.740Z  INFO 3327 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1745819913737
+2025-04-28T05:58:33.745Z  INFO 3327 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Subscribed to topic(s): reversed-stock
+2025-04-28T05:58:33.761Z  INFO 3327 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [172.31.19.68:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-payments-group-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = payments-group
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-04-28T05:58:33.778Z  INFO 3327 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
+2025-04-28T05:58:33.780Z  INFO 3327 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
+2025-04-28T05:58:33.780Z  INFO 3327 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1745819913778
+2025-04-28T05:58:33.782Z  INFO 3327 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Subscribed to topic(s): new-payments
+2025-04-28T05:58:33.801Z  INFO 3327 --- [main] com.stock.ms.StockMsApplication          : Started StockMsApplication in 6.273 seconds (process running for 6.948)
+2025-04-28T05:58:34.215Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Resetting the last seen epoch of partition new-payments-0 to 0 since the associated topicId changed from null to DxmzvGZ5Q8eqdOWrSadeBA
+2025-04-28T05:58:34.218Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Cluster ID: PNIRl7R8R66zWkCzDAYsBg
+2025-04-28T05:58:34.219Z  WARN 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Error while fetching metadata with correlation id 2 : {reversed-stock=LEADER_NOT_AVAILABLE}
+2025-04-28T05:58:34.220Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Cluster ID: PNIRl7R8R66zWkCzDAYsBg
+2025-04-28T05:58:34.220Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Discovered group coordinator 172.31.19.68:9092 (id: 2147483647 rack: null)
+2025-04-28T05:58:34.220Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Discovered group coordinator 172.31.19.68:9092 (id: 2147483647 rack: null)
+2025-04-28T05:58:34.223Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] (Re-)joining group
+2025-04-28T05:58:34.223Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] (Re-)joining group
+2025-04-28T05:58:34.241Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Request joining group due to: need to re-join with the given member-id: consumer-stock-group-1-d4488a68-369d-4ca3-a76f-48186067a7e1
+2025-04-28T05:58:34.242Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2025-04-28T05:58:34.242Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] (Re-)joining group
+2025-04-28T05:58:34.242Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Request joining group due to: need to re-join with the given member-id: consumer-payments-group-2-38893e3e-e204-4e1c-b94b-17395480b316
+2025-04-28T05:58:34.243Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2025-04-28T05:58:34.243Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] (Re-)joining group
+2025-04-28T05:58:34.245Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Successfully joined group with generation Generation{generationId=1, memberId='consumer-stock-group-1-d4488a68-369d-4ca3-a76f-48186067a7e1', protocol='range'}
+2025-04-28T05:58:34.327Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Resetting the last seen epoch of partition reversed-stock-0 to 0 since the associated topicId changed from null to aaPI9mkmSwqjUZTQCO-bgg
+2025-04-28T05:58:34.329Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Finished assignment for group at generation 1: {consumer-stock-group-1-d4488a68-369d-4ca3-a76f-48186067a7e1=Assignment(partitions=[reversed-stock-0])}
+2025-04-28T05:58:34.335Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Successfully synced group in generation Generation{generationId=1, memberId='consumer-stock-group-1-d4488a68-369d-4ca3-a76f-48186067a7e1', protocol='range'}
+2025-04-28T05:58:34.336Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Notifying assignor about the new Assignment(partitions=[reversed-stock-0])
+2025-04-28T05:58:34.338Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Adding newly assigned partitions: reversed-stock-0
+2025-04-28T05:58:34.343Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Found no committed offset for partition reversed-stock-0
+2025-04-28T05:58:34.348Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Found no committed offset for partition reversed-stock-0
+2025-04-28T05:58:34.355Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Resetting offset for partition reversed-stock-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[172.31.19.68:9092 (id: 0 rack: null)], epoch=0}}.
+2025-04-28T05:58:34.359Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : stock-group: partitions assigned: [reversed-stock-0]
+2025-04-28T05:58:36.300Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-payments-group-2-38893e3e-e204-4e1c-b94b-17395480b316', protocol='range'}
+2025-04-28T05:58:36.433Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-payments-group-2-38893e3e-e204-4e1c-b94b-17395480b316', protocol='range'}
+2025-04-28T05:58:36.434Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Notifying assignor about the new Assignment(partitions=[new-payments-0])
+2025-04-28T05:58:36.434Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Adding newly assigned partitions: new-payments-0
+2025-04-28T05:58:36.437Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Found no committed offset for partition new-payments-0
+2025-04-28T05:58:36.439Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Found no committed offset for partition new-payments-0
+2025-04-28T05:58:36.444Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Resetting offset for partition new-payments-0 to position FetchPosition{offset=1, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[172.31.19.68:9092 (id: 0 rack: null)], epoch=0}}.
+2025-04-28T05:58:36.446Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : payments-group: partitions assigned: [new-payments-0]
+2025-04-28T05:58:52.255Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Request joining group due to: group is already rebalancing
+2025-04-28T05:58:52.256Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Revoke previously assigned partitions reversed-stock-0
+2025-04-28T05:58:52.257Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : stock-group: partitions revoked: [reversed-stock-0]
+2025-04-28T05:58:52.257Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] (Re-)joining group
+2025-04-28T05:58:52.260Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Successfully joined group with generation Generation{generationId=2, memberId='consumer-stock-group-1-d4488a68-369d-4ca3-a76f-48186067a7e1', protocol='range'}
+2025-04-28T05:58:52.481Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Resetting the last seen epoch of partition new-stock-0 to 0 since the associated topicId changed from null to adfXPIAnSlOUBqnaesYjYQ
+2025-04-28T05:58:52.482Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Finished assignment for group at generation 2: {consumer-stock-group-1-d4488a68-369d-4ca3-a76f-48186067a7e1=Assignment(partitions=[reversed-stock-0]), consumer-stock-group-1-d4ecfffb-e445-4dac-be93-dc05469520c5=Assignment(partitions=[new-stock-0])}
+2025-04-28T05:58:52.486Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Successfully synced group in generation Generation{generationId=2, memberId='consumer-stock-group-1-d4488a68-369d-4ca3-a76f-48186067a7e1', protocol='range'}
+2025-04-28T05:58:52.487Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Notifying assignor about the new Assignment(partitions=[reversed-stock-0])
+2025-04-28T05:58:52.488Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Adding newly assigned partitions: reversed-stock-0
+2025-04-28T05:58:52.491Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Setting offset for partition reversed-stock-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[172.31.19.68:9092 (id: 0 rack: null)], epoch=0}}
+2025-04-28T05:58:52.491Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : stock-group: partitions assigned: [reversed-stock-0]
+2025-04-28T05:59:07.910Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [172.31.19.68:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2025-04-28T05:59:07.933Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Instantiated an idempotent producer.
+2025-04-28T05:59:07.956Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
+2025-04-28T05:59:07.956Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
+2025-04-28T05:59:07.956Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1745819947956
+2025-04-28T05:59:07.970Z  INFO 3327 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Resetting the last seen epoch of partition reversed-payments-0 to 0 since the associated topicId changed from null to WfwJuFGXS-KHa1qlL--lhw
+2025-04-28T05:59:07.972Z  INFO 3327 --- [kafka-producer-network-thread | producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=producer-1] Cluster ID: PNIRl7R8R66zWkCzDAYsBg
+2025-04-28T05:59:07.972Z  INFO 3327 --- [kafka-producer-network-thread | producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=producer-1] ProducerId set to 2 with epoch 0
+2025-04-28T05:59:28.270Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Request joining group due to: group is already rebalancing
+2025-04-28T05:59:28.271Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Revoke previously assigned partitions reversed-stock-0
+2025-04-28T05:59:28.271Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : stock-group: partitions revoked: [reversed-stock-0]
+2025-04-28T05:59:28.271Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] (Re-)joining group
+2025-04-28T05:59:28.274Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Successfully joined group with generation Generation{generationId=3, memberId='consumer-stock-group-1-d4488a68-369d-4ca3-a76f-48186067a7e1', protocol='range'}
+2025-04-28T05:59:28.274Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Finished assignment for group at generation 3: {consumer-stock-group-1-d4488a68-369d-4ca3-a76f-48186067a7e1=Assignment(partitions=[reversed-stock-0])}
+2025-04-28T05:59:28.276Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Successfully synced group in generation Generation{generationId=3, memberId='consumer-stock-group-1-d4488a68-369d-4ca3-a76f-48186067a7e1', protocol='range'}
+2025-04-28T05:59:28.277Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Notifying assignor about the new Assignment(partitions=[reversed-stock-0])
+2025-04-28T05:59:28.277Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Adding newly assigned partitions: reversed-stock-0
+2025-04-28T05:59:28.279Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Setting offset for partition reversed-stock-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[172.31.19.68:9092 (id: 0 rack: null)], epoch=0}}
+2025-04-28T05:59:28.279Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : stock-group: partitions assigned: [reversed-stock-0]
+2025-04-28T05:59:29.902Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Revoke previously assigned partitions reversed-stock-0
+2025-04-28T05:59:29.902Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : stock-group: partitions revoked: [reversed-stock-0]
+2025-04-28T05:59:29.902Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Revoke previously assigned partitions new-payments-0
+2025-04-28T05:59:29.903Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : payments-group: partitions revoked: [new-payments-0]
+2025-04-28T05:59:29.903Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Member consumer-payments-group-2-38893e3e-e204-4e1c-b94b-17395480b316 sending LeaveGroup request to coordinator 172.31.19.68:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2025-04-28T05:59:29.903Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-04-28T05:59:29.903Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Request joining group due to: consumer pro-actively leaving the group
+2025-04-28T05:59:29.903Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Unsubscribed all topics or patterns and assigned partitions
+2025-04-28T05:59:29.902Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Member consumer-stock-group-1-d4488a68-369d-4ca3-a76f-48186067a7e1 sending LeaveGroup request to coordinator 172.31.19.68:9092 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2025-04-28T05:59:29.904Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-04-28T05:59:29.904Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Request joining group due to: consumer pro-actively leaving the group
+2025-04-28T05:59:29.904Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Unsubscribed all topics or patterns and assigned partitions
+2025-04-28T05:59:29.905Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-04-28T05:59:29.905Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-04-28T05:59:29.905Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-stock-group-1, groupId=stock-group] Request joining group due to: consumer pro-actively leaving the group
+2025-04-28T05:59:29.905Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-payments-group-2, groupId=payments-group] Request joining group due to: consumer pro-actively leaving the group
+2025-04-28T05:59:29.906Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-04-28T05:59:29.906Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-04-28T05:59:29.906Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-04-28T05:59:29.906Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-04-28T05:59:29.907Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-04-28T05:59:29.907Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-04-28T05:59:29.911Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-stock-group-1 unregistered
+2025-04-28T05:59:29.915Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : stock-group: Consumer stopped
+2025-04-28T05:59:29.916Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-payments-group-2 unregistered
+2025-04-28T05:59:29.917Z  INFO 3327 --- [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : payments-group: Consumer stopped
+2025-04-28T05:59:29.931Z  INFO 3327 --- [SpringApplicationShutdownHook] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2025-04-28T05:59:29.934Z  INFO 3327 --- [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2025-04-28T05:59:29.934Z  INFO 3327 --- [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-04-28T05:59:29.934Z  INFO 3327 --- [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2025-04-28T05:59:29.934Z  INFO 3327 --- [SpringApplicationShutdownHook] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for producer-1 unregistered
+2025-04-28T05:59:29.937Z  INFO 3327 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-04-28T05:59:30.103Z  INFO 3327 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-28T05:59:30.112Z  INFO 3327 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
